@@ -1,0 +1,11 @@
+.componentTask {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: .5rem;
+}
+.componentTask input {
+    
+}
+.componentTask p {}
+.componentTask svg {}

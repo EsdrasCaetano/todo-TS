@@ -1,0 +1,110 @@
+.wrapper {
+    width: 46rem;
+    margin: 0 auto;
+    margin-top: -1.6875rem;
+}
+.wrapper form {
+    display: grid;
+    grid-template-columns: 39.875rem 1fr;
+    gap: .5rem;
+    align-items: center;
+}
+.wrapper form input {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 140%;
+    color: var(--gray-300);
+    padding: 1rem;
+    padding-right: 0;
+    background: var(--gray-500);
+    border: 1px solid var(--gray-700);
+    border-radius: .4166666vw;
+}
+.wrapper form  button {
+    font-style: normal;
+    font-weight: 700;
+    font-size: .875rem;
+    line-height: 140%;
+    color: var(--gray-100);
+    background-color: var(--blue-dark);
+    border: 0;
+    border-radius: 0.4166666vw;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+.tasksCreated {
+    margin-top: 4rem;
+}
+
+.tasksCreated .flex {
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tasksCreated .flex .completed,
+.tasksCreated .flex .created {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.tasksCreated .flex .created p {
+    font-style: normal;
+    font-weight: 700;
+    font-size: .875rem;
+    line-height: 140%;
+    color: var(--blue);
+}
+
+.tasksCreated .flex .completed p {
+    font-style: normal;
+    font-weight: 700;
+    font-size: .875rem;
+    line-height: 140%;
+    color: var(--purple);
+}
+
+.tasksCreated .flex .completed span,
+.tasksCreated .flex .created span {
+    font-style: normal;
+    font-weight: 700;
+    font-size: .75rem;
+    line-height: 140%;
+    color: var(--gray-200);
+    padding: .125rem .5rem;
+    background: #333333;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tasksEmpty {
+    text-align: center;
+    padding: 4rem 1.5rem;
+    border-top: 1px solid var(--gray-400);
+    border-radius: .5rem;
+}
+.tasksEmpty svg {
+    margin-bottom: 1rem;
+}
+
+.tasksEmpty p {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 140%;
+    text-align: center;
+    color: var(--gray-300);
+}
+.tasksEmpty p + p {
+    font-weight: 400;
+}
