@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 import { Header } from './components/Header';
-import { Tasks } from './components/Tasks';
+import { TasksList } from './components/TasksList';
 
 import styles from './App.module.css';
 
@@ -13,7 +13,7 @@ function App() {
     <>
       <Header />
 
-      <Tasks />
+      <TasksList />
     </>
   )
 }
