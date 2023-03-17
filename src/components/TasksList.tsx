@@ -9,13 +9,13 @@ interface TasksProps {
     id: string;
     textTask: string;
     checekd: boolean;
-
 }
 
 export function TasksList() {
     
     const [tasks, setTasks] = useState([] as TasksProps[]);
     const [newTask, setNewTask] = useState('');
+    const [checked, setChecked] = useState(false);
 
     function handleCreateNewTask(event: FormEvent) {
         event.preventDefault();
@@ -26,17 +26,37 @@ export function TasksList() {
                 checekd: false,
             }]);
             setNewTask('');
-            console.log(tasks)
-
     }
+
     function handleNewTaskChange(event: ChangeEvent<HTMLInputElement>) {
         event.target.setCustomValidity('')
-        console.log(event.target.value);
         setNewTask(event.target.value);
     }
+    
     const handleNewTaskInvalid = (event: InvalidEvent<HTMLInputElement>) => {
         event.target.setCustomValidity('Esse campo é obrigatório!')
     }
+
+    function deleteTask(taskDelete: string) {
+        setTasks(tasks.filter(task => task.id!== taskDelete));
+       
+    }
+    
+    function changeTaskStatus(checekd:string) {
+        const toDoWithChangedTask = tasks.map(task => {
+          if (task.id === checekd) {
+            task.checekd = !task.checekd
+            console.log()
+        }
+        return task
+        })
+        setTasks(toDoWithChangedTask)
+    }
+    
+    const numberChecked = tasks.filter(
+        task => task.checekd === true
+    ).length
+   
     return(
         <div className={styles.wrapper}>
             <form onSubmit={handleCreateNewTask}>
@@ -60,26 +80,38 @@ export function TasksList() {
                     
                     <div className={styles.created}>
                         <p>Tarefas criadas</p>
-                        <span>0</span>    
+                        <span>{tasks.length}</span>    
                     </div> 
 
                     <div className={styles.completed}>
                         <p>Concluídas</p>
-                        <span>0</span>    
+                        <span>{numberChecked} de {tasks.length}</span>    
                     </div> 
 
                 </div>
 
-                <div className={styles.tasksEmpty}>
+                
+                {tasks.length === 0 ? 
+                    (
+                        <div className={styles.tasksEmpty}>
 
-                    <ClipboardText size={56} color="#3D3D3D" />
-                    <p>Você ainda não tem tarefas cadastradas</p>
-                    <p>Crie tarefas e organize seus itens a fazer</p>
-                </div>
-
-
-                <Task />
-                <Task />
+                            <ClipboardText size={56} color="#3D3D3D" />
+                            <p>Você ainda não tem tarefas cadastradas</p>
+                            <p>Crie tarefas e organize seus itens a fazer</p>
+                        </div>
+                    ) : (
+                        tasks.map(task => (
+                            <Task 
+                                key={task.id} 
+                                id={task.id} 
+                                isCompleted={task.checekd}
+                                title={task.textTask} 
+                                onChangeCompleted={changeTaskStatus}
+                                onDeleteTask={deleteTask}    
+                            />
+                        ))
+                    )
+                }
             </div>
         </div>
     )

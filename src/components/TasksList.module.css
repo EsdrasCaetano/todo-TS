@@ -35,6 +35,10 @@
     align-items: center;
     gap: 0.5rem;
     cursor: pointer;
+    transition: all .3s;
+}
+.wrapper form  button:hover {
+    background-color: var(--blue);
 }
 
 .tasksCreated {
@@ -107,4 +111,35 @@
 }
 .tasksEmpty p + p {
     font-weight: 400;
+}
+@media screen and (max-width: 1023px) {
+    .wrapper {
+        width: 35rem;
+    }
+    .wrapper form {
+        grid-template-columns: 28rem 1fr;
+    }
+}
+@media screen and (max-width: 767px) {
+    html {
+        font-size: 87.5%;
+        font-size: 100%;
+    }
+    .wrapper {
+        width: 90vw;
+    }
+    .wrapper form {
+        grid-template-columns: 1fr;
+    }
+    .wrapper form button {
+        justify-content: center;
+        width: fit-content;
+        margin: 0 auto;
+        padding-left: 5rem;
+        padding-right: 5rem;
+    }
+    .tasksCreated .flex {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
 }

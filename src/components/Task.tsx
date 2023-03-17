@@ -5,31 +5,43 @@ import { v4 as uuidv4 } from 'uuid';
 
 import styles from './Task.module.css'
 
-export function Task() {
-    const [checked, setChecked] = useState(false);
+interface ToDoProps {
+    id: string;
+    title: string;
+    isCompleted: boolean;
+    onChangeCompleted: (id: string) => void;
+    onDeleteTask: (id: string) => void;
+}
 
-    function handleChecked(event: ChangeEvent<HTMLInputElement>) {
-        setChecked(!checked);
-        console.log(event.target.checked)
+export function Task({id, title ,isCompleted, onChangeCompleted, onDeleteTask}: ToDoProps) {
+   
+    function handleDeleteTask() {
+        onDeleteTask(id)
+    }
+
+    function handleCheckTask() {
+        onChangeCompleted(id)
     }
 
     return (
         <div className={styles.componentTask}>
             <input 
-            type="checkbox" 
-            name="check"
-            checked={checked}
-            className={styles.checkbox} 
-            onChange={handleChecked}
-            id={uuidv4()}
-        />
+                type="checkbox" 
+                name="check"
+                className={styles.checkbox} 
+                onChange={handleCheckTask}
+                id={uuidv4()}
+            />
 
-            <p>
-                Integer urna interdum massa libero auctor neque turpis turpis 
-                semper. Duis vel sed fames integer.
+            <p className={isCompleted ? styles.titleTaskChecked : styles.titleTaskNoChecked}>
+                {title}
             </p>
 
-            <Trash size={16} />
+            <Trash 
+                onClick={handleDeleteTask}
+                size={16}
+                
+            />
         </div>
     )
 }

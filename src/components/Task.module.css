@@ -16,49 +16,81 @@
     
 }
 .componentTask p {
+    transition: all .7s;
+}
+.titleTaskNoChecked {
     color: var(--gray-100);
     width: 100%;
     font-style: normal;
     font-weight: 400;
     font-size: .875rem;
     line-height: 140%;
+    text-decoration: none;
+}
+.titleTaskChecked {
+    color: var(--gray-300);
+    width: 100%;
+    font-style: normal;
+    font-weight: 400;
+    font-size: .875rem;
+    line-height: 140%;
+    text-decoration: line-through;
 }
 .componentTask svg {
     transition: all .3s;
 }
 .componentTask svg:hover {
-    color: red;
+    color: var(--danger);
 }
+
 .checkbox[type='checkbox'] {
-	-webkit-appearance:none;
+    -webkit-appearance:none;
     width: 1.25rem;
     height: 1.25rem;
     border-radius: 50%;
     display: inline-block;
 	border: .125rem solid var(--blue);
+    transition: all .25s linear;
+}
+.checkbox[type='checkbox']:hover {
+    border-color: var(--blue-dark);
 }
 
 .checkbox[type='checkbox']:checked:after {
-  content: "";
-  display: block;
-  position: relative;
-  top: 4px;
-  top: .25rem;
-  left: 7px;
-  left: .4375rem;
-  width: 3px;
-  width: .1875em;
-  height: 8px;
-  height: 0.5rem;
-  border-bottom: .125rem solid #fff;
-  border-right: .125rem solid #fff;
-  -webkit-transform: rotate(45deg);
-  outline: none;
+    content: "";
+    display: block;
+    position: relative;
+    top: 4px;
+    top: .25rem;
+    left: 7px;
+    left: .4375rem;
+    width: 3px;
+    width: .1875em;
+    height: 8px;
+    height: 0.5rem;
+    border-bottom: .125rem solid #fff;
+    border-right: .125rem solid #fff;
+    -webkit-transform: rotate(45deg);
+    outline: none;
 }
+
 
 .checkbox[type=checkbox]:checked   {
     background: var(--purple-dark);
     outline: none;
     border: 0;
+    transition: all 0.3s;
+}
+.checkbox[type=checkbox]:checked:hover {
+    background: var(--purple);
 }
 
+@media screen and (max-width: 767px) {
+    .checkbox[type='checkbox'] {
+        width: 1.5rem;
+    }
+    .componentTask svg {
+        font-size: 120%;
+        width: 1.6rem
+    }
+}
