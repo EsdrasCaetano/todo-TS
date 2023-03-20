@@ -29,7 +29,15 @@
 - [x] Remover Tarefas
   
 <h2 id="layout">Layout</h2>
-  
+
+![todogif](https://user-images.githubusercontent.com/54487736/226433791-30a432e8-2d72-4f92-a63d-341cf0301838.gif)
+
+
+<h3>Mobile</h3>
+
+<img src="https://user-images.githubusercontent.com/54487736/226434730-ef0308e4-acc5-4058-94c2-3fc594a6c02c.png" />
+
+
 <h2 id="tecnologias">Tecnologias usadas</h2>
 <p align="">
     <a href="https://pt-br.reactjs.org/" target="_blank">
