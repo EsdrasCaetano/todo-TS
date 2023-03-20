@@ -40,7 +40,7 @@
   </a>
 </p>
 
-<h2>Como usar</h2>
+<h2 id="instalacao">Como usar</h2>
 
 <h3>📃 Pré-requisitos</h3>
 
