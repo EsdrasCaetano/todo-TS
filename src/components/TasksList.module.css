@@ -2,6 +2,7 @@
     width: 46rem;
     margin: 0 auto;
     margin-top: -1.6875rem;
+    padding-bottom: 5rem;
 }
 .wrapper form {
     display: grid;
@@ -122,24 +123,35 @@
 }
 @media screen and (max-width: 767px) {
     html {
-        font-size: 87.5%;
         font-size: 100%;
+        font-size: 87.5%;
     }
     .wrapper {
-        width: 90vw;
+        width: 90%;
     }
     .wrapper form {
-        grid-template-columns: 1fr;
+        display: flex;
+        justify-content: space-between;
+    }
+    .wrapper form input  {
+        font-size: 80%;
+        width: 70%;
+        border-radius: 0.5rem;
     }
     .wrapper form button {
+        border-radius: 0.5rem;
         justify-content: center;
-        width: fit-content;
-        margin: 0 auto;
-        padding-left: 5rem;
-        padding-right: 5rem;
+        width: 30%;
     }
+    .tasksCreated .flex {
+        gap: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 290px) {
     .tasksCreated .flex {
         flex-direction: column;
         gap: 1.5rem;
     }
+
 }

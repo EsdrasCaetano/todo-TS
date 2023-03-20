@@ -15,7 +15,6 @@ export function TasksList() {
     
     const [tasks, setTasks] = useState([] as TasksProps[]);
     const [newTask, setNewTask] = useState('');
-    const [checked, setChecked] = useState(false);
 
     function handleCreateNewTask(event: FormEvent) {
         event.preventDefault();
@@ -85,7 +84,11 @@ export function TasksList() {
 
                     <div className={styles.completed}>
                         <p>Concluídas</p>
-                        <span>{numberChecked} de {tasks.length}</span>    
+                        {tasks.length < 1 ? 
+                            (<span>0</span>) 
+                            : 
+                            (<span>{numberChecked} de {tasks.length}</span>)
+                        }
                     </div> 
 
                 </div>

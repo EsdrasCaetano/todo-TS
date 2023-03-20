@@ -8,3 +8,13 @@
 .header img {
     width: 7.875rem;
 }
+@media screen and (max-width: 767px) {
+    .header img {
+        width: 10rem;
+    }
+}
+@media screen and (max-width: 290px) {
+    .header img {
+        width: 7.875rem;
+    }
+}

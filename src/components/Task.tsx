@@ -39,7 +39,7 @@ export function Task({id, title ,isCompleted, onChangeCompleted, onDeleteTask}: 
 
             <Trash 
                 onClick={handleDeleteTask}
-                size={16}
+               className={styles.trash}
                 
             />
         </div>

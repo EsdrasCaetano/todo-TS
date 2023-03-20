@@ -12,9 +12,6 @@
 .componentTask {
     margin-top: .75rem;
 }
-.componentTask input {
-    
-}
 .componentTask p {
     transition: all .7s;
 }
@@ -36,11 +33,22 @@
     line-height: 140%;
     text-decoration: line-through;
 }
-.componentTask svg {
-    transition: all .3s;
+.componentTask .trash {
+    display: flex;
+    justify-content: center;
+    padding: 0.1rem;
+    font-size: 160%;
+    color: var(--gray-300);
+    border: none;
+    background: none;
+    transition: background-color 0.15s, border-radius 0.15s;
+    transition: all .15s;
 }
-.componentTask svg:hover {
+.componentTask .trash:focus-visible,
+.componentTask .trash:hover {
     color: var(--danger);
+    background-color: var(--gray-400);
+    border-radius: .2rem;
 }
 
 .checkbox[type='checkbox'] {
@@ -89,8 +97,12 @@
     .checkbox[type='checkbox'] {
         width: 1.5rem;
     }
-    .componentTask svg {
-        font-size: 120%;
-        width: 1.6rem
+    .componentTask .trash {
+        font-size: 180%;
+        color: var(--danger);
+        border-radius: .2rem;
+        padding: 0;
+        background-color: var(--gray-400);
     }
+    
 }
